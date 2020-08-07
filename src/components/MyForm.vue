@@ -4,25 +4,6 @@
         <input v-model.trim="firstnameCom" type="text" placeholder="First Name" required />
         <input v-model.trim="user.lastname" type="text" placeholder="Last Name" required />
         <input type="submit" value="Create" />
-
-
-        <fieldset>
-            <legend>Props:</legend>
-            <p>id: {{id}}</p>
-            <p>firstname: {{firstname}}</p>
-            <p>lastname: {{lastname}}</p>
-        </fieldset>
-        <fieldset>
-            <legend>Data:</legend>
-            <p>id: {{user.id}}</p>
-            <p>firstname: {{user.firstname}}</p>
-            <p>lastname: {{user.lastname}}</p>
-        </fieldset>
-        <fieldset>
-            <legend>Computed:</legend>
-            <p>firstname:</p>
-        </fieldset>
-
     </form>
 </template>
 

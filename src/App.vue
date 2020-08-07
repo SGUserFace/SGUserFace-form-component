@@ -7,31 +7,19 @@
              :lastname="currentUser.lastname">
     </my-form>
 
-
-      <fieldset>
-          <legend>currentUser:</legend>
-          <p>id: {{currentUser.id}}</p>
-          <p>firstname: {{currentUser.firstname}}</p>
-          <p>lastname: {{currentUser.lastname}}</p>
-      </fieldset>
-
-
       <table>
-
         <tr>
           <th>#</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Actions</th>
         </tr>
-
         <tr v-for="user in users" :key="user.id">
           <td>{{ user.id }}</td>
           <td>{{ user.firstname }}</td>
           <td>{{ user.lastname }}</td>
           <td @click.prevent="edit(user.id)" class="btn edit">Edit</td>
         </tr>
-
     </table>
 
   </div>
