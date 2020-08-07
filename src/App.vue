@@ -1,10 +1,8 @@
 <template>
-  <div id="app">
-    <h1>My Web Site</h1>
-
+  <div>
     <my-form @add="add"
-             :firstname="currentUser.firstname"
-             :lastname="currentUser.lastname">
+     :firstname="currentUser.firstname"
+     :lastname="currentUser.lastname">
     </my-form>
 
       <table>
@@ -18,7 +16,9 @@
           <td>{{ user.id }}</td>
           <td>{{ user.firstname }}</td>
           <td>{{ user.lastname }}</td>
-          <td @click.prevent="edit(user.id)" class="btn edit">Edit</td>
+          <td>
+            <a @click.prevent="edit(user)" href="#">Edit</a>
+          </td>
         </tr>
     </table>
 
@@ -29,7 +29,6 @@
 import MyForm from "@/components/MyForm";
 
 export default {
-
   name: 'App',
 
   components: {
@@ -39,9 +38,9 @@ export default {
   data() {
     return {
       currentUser: {
-          id: null,
-          firstname: null,
-          lastname: null,
+        id: null,
+        firstname: null,
+        lastname: null,
       },
 
       users: [
@@ -56,16 +55,14 @@ export default {
       console.log(`Add`);
       this.users.push(user);
     },
+    edit(user) {
+      this.currentUser = user;
+    }
   }
 }
 </script>
 
 <style scoped>
-  h1{
-    font-family: Tahoma, fantasy;
-  }
-
-
   table{
     border-collapse: collapse;
     font-family: Tahoma, fantasy;
@@ -74,13 +71,5 @@ export default {
   table, th, td {
     border: 1px solid black;
     padding: 3px;
-  }
-
-  .btn{
-    cursor: pointer;
-  }
-
-  .edit{
-    color: deepskyblue;
   }
 </style>
